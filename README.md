@@ -41,14 +41,24 @@ This project is a fully autonomous hovercraft built from scratch for an embedded
 ## Software Architecture
 
 ```
-hovercraft/
-├── main.c        Entry point, 1 kHz systick ISR, software PWM, millis()
-├── config.h      All pin definitions, thresholds, and tuning constants
-├── imu.c / .h    TWI (I2C) driver, MPU-6050 init, gyro calibration, yaw integration
-├── sensors.c/.h  ADC driver, IR distance sensor, HC-SR04 ultrasonic + upbar logic
-├── pid.c / .h    PID yaw controller with anti-windup and filtered derivative
-├── motion.c / .h Servo & fan control, turn_by_yaw, straight drive, intersection solver
-└── Makefile      avr-gcc build and avrdude flash targets
+autonomous-hovercraft/
+├── README.md
+├── Makefile              avr-gcc build and avrdude flash targets
+├── config.h              All pin definitions, thresholds, and tuning constants
+├── src/
+│   ├── main.c            Entry point, 1 kHz systick ISR, software PWM, millis()
+│   ├── imu.c             TWI driver, MPU-6050 init, gyro calibration, yaw integration
+│   ├── sensors.c         ADC, IR distance sensor, HC-SR04 ultrasonic + upbar logic
+│   ├── pid.c             PID yaw controller with anti-windup and filtered derivative
+│   └── motion.c          Servo & fan control, turning, straight drive, intersection solver
+├── include/
+│   ├── imu.h
+│   ├── sensors.h
+│   ├── pid.h
+│   └── motion.h
+└── docs/
+    ├── system_architecture.png
+    └── wiring_diagram.png
 ```
 
 All tunable parameters (PID gains, thresholds, pin assignments, duty cycles) live in `config.h` so nothing is buried in logic files.
@@ -146,11 +156,11 @@ Default upload port is `/dev/ttyUSB0`. Edit the `PORT` variable in the `Makefile
 
 **Development & bench testing**
 
-![Bench testing setup — hovercraft hardware with lift fan, HC-SR04, IR sensor, and LiPo battery alongside MacBook running the build](docs/IMG_8504.jpeg)
+![Bench testing setup — hovercraft hardware with lift fan, HC-SR04, IR sensor, and LiPo battery alongside MacBook running the build](docs/hovercraft_electronics.jpg)
 
 **Maze run**
 
-![Hovercraft mid-run inside the wooden maze during the competition demo](docs/IMG_8508.jpeg)
+![Hovercraft mid-run inside the wooden maze during the competition demo](docs/hovercraft_track.jpg)
 
 ---
 
