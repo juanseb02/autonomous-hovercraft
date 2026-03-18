@@ -156,11 +156,11 @@ Default upload port is `/dev/ttyUSB0`. Edit the `PORT` variable in the `Makefile
 
 **Development & bench testing**
 
-![Bench testing setup — hovercraft hardware with lift fan, HC-SR04, IR sensor, and LiPo battery alongside MacBook running the build](docs/hovercraft_electronics.jpg)
+![Bench testing setup — hovercraft hardware with lift fan, HC-SR04, IR sensor, and LiPo battery alongside MacBook running the build](docs/IMG_8504.jpg)
 
 **Maze run**
 
-![Hovercraft mid-run inside the wooden maze during the competition demo](docs/hovercraft_track.jpg)
+![Hovercraft mid-run inside the wooden maze during the competition demo](docs/IMG_8508.jpg)
 
 ---
 
