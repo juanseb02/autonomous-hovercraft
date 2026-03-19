@@ -1,6 +1,29 @@
 # Autonomous Maze-Navigating Hovercraft
 
-**Team #3 · Fall 2025 · Concordia University**
+Bare-metal embedded robotics project built on an **ATmega328P** in **C**, featuring **PID yaw control**, **MPU-6050 IMU integration**, and fully autonomous navigation of a physical maze.
+
+---
+
+## 🎥 Demo
+
+### Maze Run
+![Hovercraft maze run](docs/IMG_8508.jpeg)
+
+### Bench Testing
+![Hovercraft bench testing](docs/IMG_8504.jpeg)
+
+[▶️ Watch demo video](https://youtube.com/shorts/Qc1ewwDGVW8?feature=share)
+
+---
+
+## 🚀 Highlights
+
+- **Bare-metal AVR firmware** — no Arduino libraries, direct register programming
+- **Real-time PID heading control** using gyroscope (MPU-6050)
+- **Multi-sensor integration** — IR + ultrasonic + IMU (I²C)
+- **Autonomous navigation logic** — intersection handling, dead-end recovery, finish detection
+- **Software PWM via Timer0 ISR** for dual fan control
+- Full system design: hardware, firmware, control, and testing
 
 ---
 
@@ -149,18 +172,6 @@ make clean
 ```
 
 Default upload port is `/dev/ttyUSB0`. Edit the `PORT` variable in the `Makefile` if yours differs (e.g. `/dev/tty.usbmodem*` on macOS).
-
----
-
-## Photos
-
-**Development & bench testing**
-
-![Bench testing setup — hovercraft hardware with lift fan, HC-SR04, IR sensor, and LiPo battery alongside MacBook running the build](docs/IMG_8504.jpeg)
-
-**Maze run**
-
-![Hovercraft mid-run inside the wooden maze during the competition demo](docs/IMG_8508.jpeg)
 
 ---
 
